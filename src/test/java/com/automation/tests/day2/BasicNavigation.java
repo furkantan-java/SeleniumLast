@@ -3,10 +3,6 @@ package com.automation.tests.day2;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.safari.SafariDriver;
 
 public class BasicNavigation {
 
@@ -43,8 +39,16 @@ public class BasicNavigation {
         } else {
             System.out.println("TEST FAILED!");
         }
-
+        //comeback to google
+        driver.navigate().back();
+        //checking if page title is equals to Google
+        //.getTitle() - returns page title
+        verifyEquals(driver.getTitle(), "Google");
+        //must be at the end
         driver.close();//to close browser
+        //browser cannot close itself
+
+
     }
 
     public static void verifyEquals(String arg1, String arg2){
@@ -53,5 +57,7 @@ public class BasicNavigation {
         } else {
             System.out.println("TEST FAILED");
         }
+
+
     }
 }
