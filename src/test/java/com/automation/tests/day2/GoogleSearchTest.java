@@ -27,5 +27,6 @@ public class GoogleSearchTest {
         search.sendKeys("a", Keys.ENTER);
         Thread.sleep(2000);
         driver.quit();
+
     }
 }
